@@ -19,11 +19,17 @@ npx skills add jlong/quiddity
 | Skill                | Description                                              |
 | -------------------- | -------------------------------------------------------- |
 | `/q-setup`           | Run the full setup flow for your project                 |
+| `/q-scan-project`   | Scan your project and write project.md                   |
 | `/q-which-process`   | Discover your SDLC and write process.md                  |
 | `/q-which-tools`     | Interview you about your tools and write tools.json      |
 | `/q-setup-next-task` | Generate a `/next-task` skill for your project           |
 | `/q-setup-approve`   | Generate an `/approve` skill for your project            |
 | `/q-setup-new-issue` | Generate a `/new-issue` skill for your project           |
+
+### /q-scan-project
+
+Scans your project and documents its structure, tech stack, key files, and
+conventions. Writes `.quiddity/project.md`.
 
 ### /q-which-process
 
@@ -47,8 +53,8 @@ and others.
 
 ### /q-setup
 
-Runs the full setup flow in order: `/q-which-process` first, then
-`/q-which-tools`, then each setup skill in sequence.
+Runs the full setup flow in order: `/q-scan-project`, then `/q-which-process`,
+then `/q-which-tools`, then each setup skill in sequence.
 
 ### /q-setup-next-task, /q-setup-approve, /q-setup-new-issue
 

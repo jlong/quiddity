@@ -11,16 +11,20 @@ but the workflow, conventions, and processes that govern their development cycle
 
 ## Process
 
-1. **Check for existing documentation.** Ask the user:
+1. **Read project context.** Check if `.quiddity/project.md` exists. If it does,
+   read it to understand the project structure, tech stack, and any conventions
+   already documented. Use this to inform your questions.
+
+2. **Check for existing documentation.** Ask the user:
    - "Do you have a document that describes your development process? You can
      share a file path, URL, or paste the contents."
    - If they provide a document, read it and extract the relevant details below.
    - If not, interview them using the questions below.
 
-2. **Check for existing process.md.** If `.quiddity/process.md` already exists,
+3. **Check for existing process.md.** If `.quiddity/process.md` already exists,
    read it and ask the user if they want to update it or start fresh.
 
-3. **Interview the user** about the following areas (skip any that were covered
+4. **Interview the user** about the following areas (skip any that were covered
    by a shared document):
 
    ### Branching strategy
@@ -67,14 +71,14 @@ but the workflow, conventions, and processes that govern their development cycle
    - If team: how is work divided? (feature teams, full-stack, frontend/backend split)
    - Any on-call or rotation responsibilities?
 
-4. **Write the results.** Create `.quiddity/process.md` with a clear, readable
+5. **Write the results.** Create `.quiddity/process.md` with a clear, readable
    description of the user's SDLC. Use markdown headings and bullet points.
    The file should be written in second person ("You use trunk-based development...")
    so that other skills can reference it as instructions.
 
    Create the `.quiddity/` directory if it doesn't exist.
 
-5. **Confirm with the user.** Show them the generated process.md and ask if
+6. **Confirm with the user.** Show them the generated process.md and ask if
    anything needs to be adjusted.
 
 ## Output format
