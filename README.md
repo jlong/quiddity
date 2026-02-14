@@ -16,18 +16,36 @@ npx skills add jlong/quiddity
 
 ## Skills
 
-| Skill                | Description                                    |
-| -------------------- | ---------------------------------------------- |
-| `/q-setup`           | Setup all tasks for your project               |
-| `/q-setup-next-task` | Generate a `/next-task` skill for your project |
-| `/q-setup-approve`   | Generate an `/approve` skill for your project  |
-| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project |
+| Skill                | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| `/q-setup`           | Run the full setup flow for your project            |
+| `/q-which-tools`     | Interview you about your tools and write tools.json |
+| `/q-setup-next-task` | Generate a `/next-task` skill for your project      |
+| `/q-setup-approve`   | Generate an `/approve` skill for your project       |
+| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project      |
 
-Each setup skill will:
+### /q-which-tools
 
-1. Ask about your project's tools and systems (issue tracker, CI, git workflow, etc.)
-2. Recommend and help install any needed MCPs or CLI tools
-3. Generate a custom skill wired to your specific setup
+Discovers what tools your project uses and writes the results to
+`.quiddity/tools.json`. Pass it the categories you need:
+
+```
+/q-which-tools issues source-control
+```
+
+Categories already in `tools.json` are skipped unless you ask to reconfigure.
+Available categories include: `issues`, `source-control`, `ci`, `pr`, `deploy`,
+`notifications`, and others.
+
+### /q-setup
+
+Runs the full setup flow in order: `/q-which-tools` first, then each setup
+skill in sequence.
+
+### /q-setup-next-task, /q-setup-approve, /q-setup-new-issue
+
+Each generates a custom skill for your project. They call `/q-which-tools`
+with the categories they need, so they work standalone or as part of `/q-setup`.
 
 ## What is a build loop?
 
