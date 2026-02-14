@@ -16,17 +16,18 @@ npx skills add jlong/quiddity
 
 ## Skills
 
-| Skill | Description |
-|---|---|
-| `/setup-next-task` | Generate a `/next-task` skill for your project |
-| `/setup-approve` | Generate an `/approve` skill for your project |
-| `/setup-new-issue` | Generate a `/new-issue` skill for your project |
+| Skill                | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| `/q-setup`           | Setup all tasks for your project               |
+| `/q-setup-next-task` | Generate a `/next-task` skill for your project |
+| `/q-setup-approve`   | Generate an `/approve` skill for your project  |
+| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project |
 
 Each setup skill will:
 
 1. Ask about your project's tools and systems (issue tracker, CI, git workflow, etc.)
 2. Recommend and help install any needed MCPs or CLI tools
-3. Generate a custom skill in `.claude/skills/` wired to your specific setup
+3. Generate a custom skill wired to your specific setup
 
 ## What is a build loop?
 
@@ -41,4 +42,4 @@ A build loop is a three-skill workflow that keeps your development cycle moving:
 
 ## License
 
-MIT
+MIT License (See [LICENSE.md](LICENSE.md))
