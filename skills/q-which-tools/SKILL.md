@@ -26,10 +26,15 @@ configure.
 
 ## Process
 
-1. **Read existing config.** Check if `.quiddity/tools.json` exists. If it does,
+1. **Read process context.** Check if `.quiddity/process.md` exists. If it does,
+   read it to understand the user's SDLC. Use this context to inform your
+   questions and pre-fill answers where possible (e.g., if the process doc
+   mentions "we use GitHub flow", you already know the source-control platform).
+
+2. **Read existing config.** Check if `.quiddity/tools.json` exists. If it does,
    read it and note which categories are already configured.
 
-2. **For each requested category:**
+3. **For each requested category:**
    - If the category already exists in tools.json, tell the user it's already
      configured and show the current value. Ask if they want to reconfigure it.
      If not, skip it.
@@ -38,7 +43,7 @@ configure.
      category reference below for what to ask.
    - Recommend relevant MCPs and help the user install them if needed.
 
-3. **Write the results.** Merge the new category data into `.quiddity/tools.json`.
+4. **Write the results.** Merge the new category data into `.quiddity/tools.json`.
    Create the `.quiddity/` directory if it doesn't exist. Preserve any existing
    categories that weren't reconfigured.
 

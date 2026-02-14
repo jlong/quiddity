@@ -18,7 +18,8 @@ This skill needs the following tools.json categories: **issues**
    configure it.
 
 2. **Read the configuration.** Load `.quiddity/tools.json` and extract the
-   `issues` category.
+   `issues` category. Also read `.quiddity/process.md` if it exists for
+   context on the user's issue workflow and conventions.
 
 3. **Discover project context.** Read the project's CLAUDE.md, package.json,
    or equivalent to understand what kind of project this is.

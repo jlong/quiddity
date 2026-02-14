@@ -8,10 +8,20 @@ independently.
 
 ## Core concepts
 
+### process.md
+
+`.quiddity/process.md` describes the user's software development lifecycle in
+markdown. It covers branching strategy, code review process, issue workflow,
+commit conventions, testing expectations, and release process. Written in second
+person so other skills can reference it as instructions.
+
+`/q-which-process` is responsible for generating this file — either by reading
+an existing process document the user provides or by interviewing them.
+
 ### tools.json
 
-`.quiddity/tools.json` is the central configuration file. It stores what tools
-a project uses, organized by category:
+`.quiddity/tools.json` is the tool configuration file. It stores what concrete
+tools a project uses, organized by category:
 
 ```json
 {
@@ -38,38 +48,52 @@ a project uses, organized by category:
 
 Each top-level key is a **category**. The schema for each category depends on
 the tool selected. `/q-which-tools` is responsible for populating this file.
+It reads `process.md` first to pre-fill answers where possible.
 
 ### Skill dependency flow
 
 ```
 /q-setup
   │
+  ├─ /q-which-process
+  │     └─ writes .quiddity/process.md
+  │
   ├─ /q-which-tools issues source-control ci pr
+  │     ├─ reads .quiddity/process.md for context
   │     └─ writes .quiddity/tools.json
   │
   ├─ /q-setup-new-issue
   │     ├─ calls /q-which-tools issues  (skipped if already configured)
-  │     └─ writes .claude/skills/new-issue/SKILL.md (or agent equivalent)
+  │     └─ writes new-issue/SKILL.md
   │
   ├─ /q-setup-next-task
   │     ├─ calls /q-which-tools issues source-control ci
-  │     └─ writes .claude/skills/next-task/SKILL.md
+  │     └─ writes next-task/SKILL.md
   │
   └─ /q-setup-approve
         ├─ calls /q-which-tools source-control ci pr
-        └─ writes .claude/skills/approve/SKILL.md
+        └─ writes approve/SKILL.md
 ```
+
+### How /q-which-process works
+
+1. Asks the user if they have an existing process document to share
+2. If yes, reads it and extracts SDLC details
+3. If no, interviews them about: branching strategy, code review, issue
+   workflow, commit conventions, testing, release process, and team structure
+4. Writes `.quiddity/process.md`
 
 ### How /q-which-tools works
 
-1. Accepts category names as arguments (e.g., `/q-which-tools issues ci`)
-2. Reads `.quiddity/tools.json` if it exists
-3. For each requested category:
+1. Reads `.quiddity/process.md` for context (if it exists)
+2. Accepts category names as arguments (e.g., `/q-which-tools issues ci`)
+3. Reads `.quiddity/tools.json` if it exists
+4. For each requested category:
    - If the category already exists in tools.json, skip it
-   - Otherwise, ask the user what tool they use for that category
+   - Otherwise, ask the user what tool they use (pre-filling from process.md)
    - Ask follow-up questions specific to the selected tool
    - Recommend and help install relevant MCPs
-4. Merges new results into `.quiddity/tools.json`
+5. Merges new results into `.quiddity/tools.json`
 
 ### How setup skills work
 
@@ -77,10 +101,9 @@ Each setup skill (`/q-setup-next-task`, `/q-setup-approve`, `/q-setup-new-issue`
 follows the same pattern:
 
 1. Call `/q-which-tools` with the categories it needs
-2. Read `.quiddity/tools.json` for the resolved configuration
-3. Ask any skill-specific questions not covered by tools.json
-   (e.g., commit message format, PR template preferences)
-4. Generate a custom SKILL.md tailored to the user's tools and conventions
+2. Read `.quiddity/process.md` and `.quiddity/tools.json` for context
+3. Ask any skill-specific questions not covered by those files
+4. Generate a custom SKILL.md tailored to the user's process and tools
 5. Write the skill to the project's skills directory
 6. Show the user the generated skill for confirmation
 
@@ -88,21 +111,24 @@ follows the same pattern:
 
 Orchestrates the full flow:
 
-1. Run `/q-which-tools` with all categories needed across all three skills
-2. Run `/q-setup-new-issue`
-3. Run `/q-setup-next-task`
-4. Run `/q-setup-approve`
+1. Run `/q-which-process` to capture the SDLC
+2. Run `/q-which-tools` with all categories needed across all three skills
+3. Run `/q-setup-new-issue`
+4. Run `/q-setup-next-task`
+5. Run `/q-setup-approve`
 
-Because `/q-which-tools` is called up front with all categories, the individual
-setup skills will find everything they need already in tools.json and won't
-re-interview.
+Because `/q-which-process` and `/q-which-tools` are called up front, the
+individual setup skills will find everything they need already in process.md
+and tools.json and won't re-interview.
 
 ## File locations
 
 | Path | Purpose |
 |---|---|
-| `.quiddity/tools.json` | Project tool configuration (generated) |
+| `.quiddity/process.md` | SDLC description (generated) |
+| `.quiddity/tools.json` | Tool configuration (generated) |
 | `skills/q-setup/SKILL.md` | Full setup orchestrator |
+| `skills/q-which-process/SKILL.md` | SDLC discovery and documentation |
 | `skills/q-which-tools/SKILL.md` | Tool discovery and configuration |
 | `skills/q-setup-next-task/SKILL.md` | Generates /next-task |
 | `skills/q-setup-approve/SKILL.md` | Generates /approve |

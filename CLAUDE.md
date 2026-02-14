@@ -6,7 +6,9 @@ A set of agent skills that generate custom build-loop skills for any project.
 
 ```
 skills/
-  q-setup/SKILL.md             # Setup all skills for your project
+  q-setup/SKILL.md             # Full setup orchestrator
+  q-which-process/SKILL.md     # SDLC discovery → .quiddity/process.md
+  q-which-tools/SKILL.md       # Tool discovery → .quiddity/tools.json
   q-setup-next-task/SKILL.md   # Generates a /next-task skill
   q-setup-approve/SKILL.md     # Generates an /approve skill
   q-setup-new-issue/SKILL.md   # Generates a /new-issue skill

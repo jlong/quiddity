@@ -16,13 +16,20 @@ npx skills add jlong/quiddity
 
 ## Skills
 
-| Skill                | Description                                         |
-| -------------------- | --------------------------------------------------- |
-| `/q-setup`           | Run the full setup flow for your project            |
-| `/q-which-tools`     | Interview you about your tools and write tools.json |
-| `/q-setup-next-task` | Generate a `/next-task` skill for your project      |
-| `/q-setup-approve`   | Generate an `/approve` skill for your project       |
-| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project      |
+| Skill                | Description                                              |
+| -------------------- | -------------------------------------------------------- |
+| `/q-setup`           | Run the full setup flow for your project                 |
+| `/q-which-process`   | Discover your SDLC and write process.md                  |
+| `/q-which-tools`     | Interview you about your tools and write tools.json      |
+| `/q-setup-next-task` | Generate a `/next-task` skill for your project           |
+| `/q-setup-approve`   | Generate an `/approve` skill for your project            |
+| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project           |
+
+### /q-which-process
+
+Discovers your software development lifecycle. You can share an existing process
+document or be interviewed about your branching strategy, code review process,
+issue workflow, and other conventions. Writes `.quiddity/process.md`.
 
 ### /q-which-tools
 
@@ -33,14 +40,15 @@ Discovers what tools your project uses and writes the results to
 /q-which-tools issues source-control
 ```
 
-Categories already in `tools.json` are skipped unless you ask to reconfigure.
-Available categories include: `issues`, `source-control`, `ci`, `pr`, `deploy`,
-`notifications`, and others.
+Reads `process.md` first to pre-fill answers where possible. Categories already
+in `tools.json` are skipped unless you ask to reconfigure. Available categories
+include: `issues`, `source-control`, `ci`, `pr`, `deploy`, `notifications`,
+and others.
 
 ### /q-setup
 
-Runs the full setup flow in order: `/q-which-tools` first, then each setup
-skill in sequence.
+Runs the full setup flow in order: `/q-which-process` first, then
+`/q-which-tools`, then each setup skill in sequence.
 
 ### /q-setup-next-task, /q-setup-approve, /q-setup-new-issue
 
