@@ -19,13 +19,13 @@ This skill needs the following tools.json categories: **issues**,
    categories, run `/q-which-tools` with those categories (e.g.,
    `/q-which-tools issues source-control ci`).
 
-2. **Read the configuration.** Load `.quiddity/tools.json` and extract the
-   `issues`, `source-control`, and `ci` categories. Also read
-   `.quiddity/process.md` if it exists for context on branching strategy,
-   code review process, and other workflow conventions.
-
-3. **Discover project context.** Read the project's CLAUDE.md, package.json,
-   or equivalent to understand what kind of project this is.
+2. **Read the configuration.** Load all available Quiddity context:
+   - `.quiddity/project.md` — project structure, tech stack, test commands,
+     source directories, entry points
+   - `.quiddity/process.md` — branching strategy, code review process,
+     commit conventions
+   - `.quiddity/tools.json` — extract the `issues`, `source-control`, and
+     `ci` categories
 
 4. **Ask skill-specific questions** not covered by tools.json:
    - How should the next task be selected? (highest priority, oldest, specific

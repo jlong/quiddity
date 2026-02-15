@@ -61,6 +61,20 @@ then `/q-which-tools`, then each setup skill in sequence.
 Each generates a custom skill for your project. They call `/q-which-tools`
 with the categories they need, so they work standalone or as part of `/q-setup`.
 
+## Generated files
+
+Quiddity writes configuration to a `.quiddity/` directory in your project:
+
+| File | Purpose |
+|---|---|
+| `.quiddity/project.md` | Project structure and tech stack summary |
+| `.quiddity/process.md` | Your development process and conventions |
+| `.quiddity/tools.json` | Concrete tool configuration by category |
+
+These files should be committed to source control so your whole team shares the
+same configuration. The generated skills (in your agent's skills directory)
+should also be committed.
+
 ## What is a build loop?
 
 A build loop is a three-skill workflow that keeps your development cycle moving:

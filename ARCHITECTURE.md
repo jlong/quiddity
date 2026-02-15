@@ -121,7 +121,7 @@ Each setup skill (`/q-setup-next-task`, `/q-setup-approve`, `/q-setup-new-issue`
 follows the same pattern:
 
 1. Call `/q-which-tools` with the categories it needs
-2. Read `.quiddity/process.md` and `.quiddity/tools.json` for context
+2. Read `.quiddity/project.md`, `.quiddity/process.md`, and `.quiddity/tools.json` for context
 3. Ask any skill-specific questions not covered by those files
 4. Generate a custom SKILL.md tailored to the user's process and tools
 5. Write the skill to the project's skills directory

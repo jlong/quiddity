@@ -45,4 +45,5 @@ discover their process and tools, then generate all three build-loop skills.
      - `/next-task` — pick up and implement the next task
      - `/approve [pr-number]` — merge an approved PR
    - Suggest they review each generated skill and tweak as needed
-   - Remind them to commit the generated skills to source control
+   - Remind them to commit `.quiddity/` and the generated skills to source
+     control so the whole team shares the same configuration

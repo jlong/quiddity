@@ -19,13 +19,12 @@ This skill needs the following tools.json categories: **source-control**,
    categories, run `/q-which-tools` with those categories (e.g.,
    `/q-which-tools source-control ci pr`).
 
-2. **Read the configuration.** Load `.quiddity/tools.json` and extract the
-   `source-control`, `ci`, and `pr` categories. Also read
-   `.quiddity/process.md` if it exists for context on merge strategy,
-   review requirements, and post-merge workflow.
-
-3. **Discover project context.** Read the project's CLAUDE.md, package.json,
-   or equivalent to understand what kind of project this is.
+2. **Read the configuration.** Load all available Quiddity context:
+   - `.quiddity/project.md` — project structure, CI/CD configuration
+   - `.quiddity/process.md` — merge strategy, review requirements,
+     post-merge workflow
+   - `.quiddity/tools.json` — extract the `source-control`, `ci`, and
+     `pr` categories
 
 4. **Ask skill-specific questions** not covered by tools.json:
    - Should the skill accept a PR number as an argument? (e.g., `/approve 123`)
