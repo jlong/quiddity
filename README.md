@@ -1,5 +1,7 @@
 # Quiddity
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+
 Generate custom build-loop skills for any project.
 
 My entire dev workflow runs on [three agent skills](https://32pixels.co/blog/how-i-manage-my-dev-workflow-with-three-agent-skills):
@@ -37,6 +39,56 @@ A build loop is a three-skill workflow that keeps your development cycle moving:
 ```bash
 npx skills add jlong/quiddity
 ```
+
+Then run `/q-setup` in Claude Code:
+
+```
+> /q-setup
+
+  I'll scan your project, learn about your process and tools, set up
+  CLIs and MCPs, then generate three custom skills: /new-issue,
+  /next-task, and /approve.
+
+  Scanning project structure...
+  ✓ Wrote .quiddity/project.md
+
+  Do you have a document that describes your development process?
+  You can share a file path, URL, or paste the contents.
+  > No, just interview me.
+
+  What branching model do you use?
+  > GitHub flow — short-lived feature branches off main.
+  ...
+  ✓ Wrote .quiddity/process.md
+
+  Which issue tracker do you use?
+  > Linear, team is ENG
+  Which source control platform?
+  > GitHub
+  ...
+  ✓ Wrote .quiddity/tools.json
+
+  Checking tool setup...
+  Tool             CLI            MCP
+  GitHub           gh (ok)        —
+  GitHub Actions   (no setup needed — runs in CI)
+  Linear           linear (ok)    Linear MCP (not found)
+
+  Linear MCP lets the agent create and update issues directly.
+  Want me to set it up? [Y/n]
+
+  ✓ Generated skills/new-issue/SKILL.md
+  ✓ Generated skills/next-task/SKILL.md
+  ✓ Generated skills/approve/SKILL.md
+```
+
+## Quick start
+
+1. Install the skills (see above)
+2. Run `/q-setup` to walk through the full configuration flow
+3. Use `/new-issue`, `/next-task`, and `/approve` in your daily workflow
+
+Or run individual setup skills if you only need part of the flow.
 
 ## Skills
 
@@ -107,6 +159,7 @@ These files should be committed to source control so your whole team shares the
 same configuration. The generated skills (in your agent's skills directory)
 should also be committed.
 
-## License
+## Contributing
 
-MIT License (See [LICENSE.md](LICENSE.md))
+Contributions are welcome! Please see [CONTRIBUTORS.md](CONTRIBUTORS.md) for
+the current list of contributors and open a pull request if you'd like to help.
