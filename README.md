@@ -19,6 +19,17 @@ helps install the right MCPs, and generates `/next-task`, `/approve`, and
 and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-skill-and-stop-writing-issues-by-hand)
 — then realizing the setup itself could be automated.
 
+## What is a build loop?
+
+A build loop is a three-skill workflow that keeps your development cycle moving:
+
+- **`/new-issue`** — Convert plain-English descriptions into structured issues
+  in your tracker with proper labels, acceptance criteria, and milestones.
+- **`/next-task`** — Pick up the highest-priority task, create a branch,
+  implement changes, open a PR, and update the issue status.
+- **`/approve`** — Verify checks pass, confirm no unresolved feedback, then
+  squash-merge and mark the issue as shipped.
+
 ## Install
 
 ```bash
@@ -93,17 +104,6 @@ Quiddity writes configuration to a `.quiddity/` directory in your project:
 These files should be committed to source control so your whole team shares the
 same configuration. The generated skills (in your agent's skills directory)
 should also be committed.
-
-## What is a build loop?
-
-A build loop is a three-skill workflow that keeps your development cycle moving:
-
-- **`/new-issue`** — Convert plain-English descriptions into structured issues
-  in your tracker with proper labels, acceptance criteria, and milestones.
-- **`/next-task`** — Pick up the highest-priority task, create a branch,
-  implement changes, open a PR, and update the issue status.
-- **`/approve`** — Verify checks pass, confirm no unresolved feedback, then
-  squash-merge and mark the issue as shipped.
 
 ## License
 
