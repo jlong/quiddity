@@ -43,7 +43,7 @@ A build loop is a set of skills that keep your development workflow moving:
 npx skills add jlong/quiddity
 ```
 
-Then run `/q-setup` in Claude Code:
+Then run `/q-setup` in your LLM:
 
 ```
 > /q-setup
