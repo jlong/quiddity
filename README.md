@@ -25,7 +25,7 @@ and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-s
 
 ## What is a build loop?
 
-A build loop is a workflow composed of a set of skills that keep your development cycle moving:
+A build loop is a set of skills that keep your development workflow moving:
 
 - **`/new-issue`** — Convert plain-English descriptions into structured issues
   in your tracker with proper labels, acceptance criteria, and milestones.
