@@ -14,8 +14,8 @@ and review process. A `/next-task` skill that works great with Linear and GitHub
 is useless if your team runs Jira and GitLab. These skills have to be bespoke.
 
 Quiddity makes them bespoke for you. It interviews you about your systems,
-helps install the right MCPs, and generates `/next-task`, `/approve`, and
-`/new-issue` skills tailored to your project. The whole thing grew out of
+helps install the right tools and MCPs, and generates `/next-task`, `/approve`,
+and `/new-issue` skills tailored to your project. The whole thing grew out of
 [building a /next-task skill from scratch](https://32pixels.co/blog/building-a-next-task-agent-skill),
 [extracting reusable sub-skills](https://32pixels.co/blog/extracting-sub-skills-from-agent-skills),
 and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-skill-and-stop-writing-issues-by-hand)
