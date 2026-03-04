@@ -2,7 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 
-Generate custom build-loop skills for any project.
+*Quiddity (n.) — the essential nature of a thing; from Medieval Latin
+quidditas, "whatness."*
+
+Generate custom build-loop skills for any project. Quiddity figures out the
+*what* of your project — your tools, process, and conventions — then generates
+agent skills tailored to how you actually work.
 
 My entire dev workflow runs on [three agent skills](https://32pixels.co/blog/how-i-manage-my-dev-workflow-with-three-agent-skills):
 `/new-issue` turns a plain-English description into a well-structured ticket,
