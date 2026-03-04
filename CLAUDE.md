@@ -10,6 +10,7 @@ skills/
   q-scan-project/SKILL.md     # Project scan → .quiddity/project.md
   q-which-process/SKILL.md     # SDLC discovery → .quiddity/process.md
   q-which-tools/SKILL.md       # Tool discovery → .quiddity/tools.json
+  q-setup-tools/SKILL.md       # CLI/MCP installation guide
   q-setup-next-task/SKILL.md   # Generates a /next-task skill
   q-setup-approve/SKILL.md     # Generates an /approve skill
   q-setup-new-issue/SKILL.md   # Generates a /new-issue skill

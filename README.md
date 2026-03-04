@@ -33,6 +33,7 @@ npx skills add jlong/quiddity
 | `/q-scan-project`   | Scan your project and write project.md                   |
 | `/q-which-process`   | Discover your SDLC and write process.md                  |
 | `/q-which-tools`     | Interview you about your tools and write tools.json      |
+| `/q-setup-tools`     | Install missing CLIs and MCPs for your tools             |
 | `/q-setup-next-task` | Generate a `/next-task` skill for your project           |
 | `/q-setup-approve`   | Generate an `/approve` skill for your project            |
 | `/q-setup-new-issue` | Generate a `/new-issue` skill for your project           |
@@ -62,10 +63,17 @@ in `tools.json` are skipped unless you ask to reconfigure. Available categories
 include: `issues`, `source-control`, `ci`, `pr`, `deploy`, `notifications`,
 and others.
 
+### /q-setup-tools
+
+Walks through the tools in `.quiddity/tools.json` and helps install any missing
+CLIs or MCPs. Checks what's already set up, offers to install what's missing,
+and lets you skip anything you don't want. Run `/q-which-tools` first if
+`tools.json` doesn't exist yet.
+
 ### /q-setup
 
 Runs the full setup flow in order: `/q-scan-project`, then `/q-which-process`,
-then `/q-which-tools`, then each setup skill in sequence.
+then `/q-which-tools`, then `/q-setup-tools`, then each setup skill in sequence.
 
 ### /q-setup-next-task, /q-setup-approve, /q-setup-new-issue
 

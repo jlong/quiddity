@@ -7,8 +7,8 @@ argument-hint: "[categories...]"
 # /q-which-tools
 
 You are interviewing the user about the tools their project uses. Your job is
-to ask about each requested category, recommend relevant MCPs, and write the
-results to `.quiddity/tools.json`.
+to ask about each requested category and write the results to
+`.quiddity/tools.json`.
 
 ## Arguments
 
@@ -41,7 +41,6 @@ configure.
    - If the category is new, ask the user what tool they use.
    - Ask follow-up questions specific to the tool they selected. See the
      category reference below for what to ask.
-   - Recommend relevant MCPs and help the user install them if needed.
 
 4. **Write the results.** Merge the new category data into `.quiddity/tools.json`.
    Create the `.quiddity/` directory if it doesn't exist. Preserve any existing
@@ -57,11 +56,6 @@ Ask:
 - What states/statuses do issues move through? (e.g., Todo → In Progress → Done)
 - How is priority represented? (priority field, labels, columns, etc.)
 - Any label conventions?
-
-MCP recommendations:
-- Linear → suggest Linear MCP
-- GitHub Issues → suggest GitHub MCP (may already be available via `gh` CLI)
-- Jira → suggest Jira MCP
 
 Example output:
 ```json
@@ -89,10 +83,6 @@ Ask:
 - Default/base branch name? (main, master, develop, etc.)
 - Branch naming convention? (e.g., `feat/LIN-{{id}}-{{slug}}`, `feature/JIRA-{{id}}`)
 - Commit message format? (conventional commits, free-form, etc.)
-
-MCP recommendations:
-- GitHub → suggest GitHub MCP if not already available
-- GitLab → suggest GitLab MCP
 
 Example output:
 ```json
@@ -170,9 +160,6 @@ Ask:
 - Where should notifications go? (Slack, Discord, email, none)
 - Which channel/room?
 - What events should trigger notifications?
-
-MCP recommendations:
-- Slack → suggest Slack MCP
 
 Example output:
 ```json

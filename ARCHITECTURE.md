@@ -74,6 +74,10 @@ It reads `process.md` first to pre-fill answers where possible.
   │     ├─ reads .quiddity/project.md and .quiddity/process.md for context
   │     └─ writes .quiddity/tools.json
   │
+  ├─ /q-setup-tools
+  │     ├─ reads .quiddity/tools.json
+  │     └─ installs missing CLIs and MCPs
+  │
   ├─ /q-setup-new-issue
   │     ├─ calls /q-which-tools issues  (skipped if already configured)
   │     └─ writes new-issue/SKILL.md
@@ -112,8 +116,16 @@ It reads `process.md` first to pre-fill answers where possible.
    - If the category already exists in tools.json, skip it
    - Otherwise, ask the user what tool they use (pre-filling from process.md)
    - Ask follow-up questions specific to the selected tool
-   - Recommend and help install relevant MCPs
 5. Merges new results into `.quiddity/tools.json`
+
+### How /q-setup-tools works
+
+1. Reads `.quiddity/tools.json` (must exist — run `/q-which-tools` first)
+2. Collects unique tool names from all categories
+3. Looks up each tool in `tool-registry.json` for recommended CLIs and MCPs
+4. Checks what's already installed (runs verify commands for CLIs, checks config for MCPs)
+5. Presents a summary of installed vs. missing items
+6. Walks the user through installing anything missing (skippable)
 
 ### How setup skills work
 
@@ -134,9 +146,10 @@ Orchestrates the full flow:
 1. Run `/q-scan-project` to scan the project
 2. Run `/q-which-process` to capture the SDLC
 3. Run `/q-which-tools` with all categories needed across all three skills
-4. Run `/q-setup-new-issue`
-5. Run `/q-setup-next-task`
-6. Run `/q-setup-approve`
+4. Run `/q-setup-tools` to install missing CLIs and MCPs
+5. Run `/q-setup-new-issue`
+6. Run `/q-setup-next-task`
+7. Run `/q-setup-approve`
 
 Because `/q-scan-project`, `/q-which-process`, and `/q-which-tools` are called
 up front, the individual setup skills will find everything they need already in
@@ -153,6 +166,8 @@ project.md, process.md, and tools.json and won't re-interview.
 | `skills/q-scan-project/SKILL.md` | Project scanning and documentation |
 | `skills/q-which-process/SKILL.md` | SDLC discovery and documentation |
 | `skills/q-which-tools/SKILL.md` | Tool discovery and configuration |
+| `skills/q-setup-tools/SKILL.md` | CLI and MCP installation guide |
+| `skills/q-setup-tools/tool-registry.json` | Tool-to-CLI/MCP mapping |
 | `skills/q-setup-next-task/SKILL.md` | Generates /next-task |
 | `skills/q-setup-approve/SKILL.md` | Generates /approve |
 | `skills/q-setup-new-issue/SKILL.md` | Generates /new-issue |

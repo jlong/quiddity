@@ -1,0 +1,102 @@
+{
+  "github": {
+    "displayName": "GitHub",
+    "clis": [
+      {
+        "name": "gh",
+        "installCommand": "brew install gh",
+        "verifyCommand": "gh --version",
+        "docsUrl": "https://cli.github.com"
+      }
+    ],
+    "mcps": []
+  },
+  "github-actions": {
+    "displayName": "GitHub Actions",
+    "notes": "GitHub Actions runs in CI — no local CLI or MCP needed. The gh CLI (see github) can be used to check workflow run status."
+  },
+  "linear": {
+    "displayName": "Linear",
+    "clis": [
+      {
+        "name": "linear",
+        "installCommand": "npm i -g @linear/cli",
+        "verifyCommand": "linear --version",
+        "docsUrl": "https://github.com/linear/linear-cli"
+      }
+    ],
+    "mcps": [
+      {
+        "name": "Linear MCP",
+        "package": "@linear/mcp-server",
+        "docsUrl": "https://linear.app/docs/mcp"
+      }
+    ]
+  },
+  "jira": {
+    "displayName": "Jira",
+    "clis": [
+      {
+        "name": "jira",
+        "installCommand": "brew install jira-cli",
+        "verifyCommand": "jira version",
+        "docsUrl": "https://github.com/ankitpokhrel/jira-cli"
+      }
+    ],
+    "mcps": [
+      {
+        "name": "Jira MCP",
+        "package": "@anthropic/mcp-server-jira",
+        "docsUrl": "https://github.com/anthropics/mcp-server-jira"
+      }
+    ]
+  },
+  "gitlab": {
+    "displayName": "GitLab",
+    "clis": [
+      {
+        "name": "glab",
+        "installCommand": "brew install glab",
+        "verifyCommand": "glab --version",
+        "docsUrl": "https://gitlab.com/gitlab-org/cli"
+      }
+    ],
+    "mcps": [
+      {
+        "name": "GitLab MCP",
+        "package": "@anthropic/mcp-server-gitlab",
+        "docsUrl": "https://github.com/anthropics/mcp-server-gitlab"
+      }
+    ]
+  },
+  "slack": {
+    "displayName": "Slack",
+    "clis": [
+      {
+        "name": "slack",
+        "installCommand": "brew install slack-cli",
+        "verifyCommand": "slack --version",
+        "docsUrl": "https://api.slack.com/automation/cli"
+      }
+    ],
+    "mcps": [
+      {
+        "name": "Slack MCP",
+        "package": "@anthropic/mcp-server-slack",
+        "docsUrl": "https://github.com/anthropics/mcp-server-slack"
+      }
+    ]
+  },
+  "vercel": {
+    "displayName": "Vercel",
+    "clis": [
+      {
+        "name": "vercel",
+        "installCommand": "npm i -g vercel",
+        "verifyCommand": "vercel --version",
+        "docsUrl": "https://vercel.com/docs/cli"
+      }
+    ],
+    "mcps": []
+  }
+}

@@ -11,8 +11,8 @@ discover their process and tools, then generate all three build-loop skills.
 ## Process
 
 1. **Welcome the user.** Briefly explain what Quiddity does: it will scan their
-   project, learn about their development process and tools, then generate three
-   custom skills (`/new-issue`, `/next-task`, `/approve`) tailored to their
+   project, learn about their development process and tools, set up CLIs and
+   MCPs, then generate three custom skills (`/new-issue`, `/next-task`, `/approve`) tailored to their
    project.
 
 2. **Run /q-scan-project** to scan the project structure. This documents key
@@ -29,15 +29,19 @@ discover their process and tools, then generate all three build-loop skills.
    Because `/q-which-process` has already run, `/q-which-tools` can reference
    `.quiddity/process.md` to pre-fill answers and ask smarter questions.
 
-5. **Run /q-setup-new-issue** to generate the `/new-issue` skill.
+5. **Run /q-setup-tools** to walk through CLI and MCP setup for each tool
+   discovered in the previous step. This checks what's already installed and
+   helps set up anything missing.
+
+6. **Run /q-setup-new-issue** to generate the `/new-issue` skill.
    Since project.md, process.md, and tools.json are already populated, this
    will skip the interviews and go straight to skill-specific questions.
 
-6. **Run /q-setup-next-task** to generate the `/next-task` skill.
+7. **Run /q-setup-next-task** to generate the `/next-task` skill.
 
-7. **Run /q-setup-approve** to generate the `/approve` skill.
+8. **Run /q-setup-approve** to generate the `/approve` skill.
 
-8. **Summarize.** Show the user what was generated:
+9. **Summarize.** Show the user what was generated:
    - The location of `.quiddity/project.md`, `.quiddity/process.md`, and `.quiddity/tools.json`
    - The three generated skills and their locations
    - A quick reminder of how to use each skill:
