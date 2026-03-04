@@ -19,6 +19,8 @@ helps install the right MCPs, and generates `/next-task`, `/approve`, and
 and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-skill-and-stop-writing-issues-by-hand)
 — then realizing the setup itself could be automated.
 
+![Quiddity](quiddity-logo.png)
+
 ## What is a build loop?
 
 A build loop is a three-skill workflow that keeps your development cycle moving:
@@ -38,16 +40,16 @@ npx skills add jlong/quiddity
 
 ## Skills
 
-| Skill                | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| `/q-setup`           | Run the full setup flow for your project                 |
-| `/q-scan-project`   | Scan your project and write project.md                   |
-| `/q-which-process`   | Discover your SDLC and write process.md                  |
-| `/q-which-tools`     | Interview you about your tools and write tools.json      |
-| `/q-setup-tools`     | Install missing CLIs and MCPs for your tools             |
-| `/q-setup-next-task` | Generate a `/next-task` skill for your project           |
-| `/q-setup-approve`   | Generate an `/approve` skill for your project            |
-| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project           |
+| Skill                | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| `/q-setup`           | Run the full setup flow for your project            |
+| `/q-scan-project`    | Scan your project and write project.md              |
+| `/q-which-process`   | Discover your SDLC and write process.md             |
+| `/q-which-tools`     | Interview you about your tools and write tools.json |
+| `/q-setup-tools`     | Install missing CLIs and MCPs for your tools        |
+| `/q-setup-next-task` | Generate a `/next-task` skill for your project      |
+| `/q-setup-approve`   | Generate an `/approve` skill for your project       |
+| `/q-setup-new-issue` | Generate a `/new-issue` skill for your project      |
 
 ### /q-scan-project
 
@@ -95,11 +97,11 @@ with the categories they need, so they work standalone or as part of `/q-setup`.
 
 Quiddity writes configuration to a `.quiddity/` directory in your project:
 
-| File | Purpose |
-|---|---|
+| File                   | Purpose                                  |
+| ---------------------- | ---------------------------------------- |
 | `.quiddity/project.md` | Project structure and tech stack summary |
 | `.quiddity/process.md` | Your development process and conventions |
-| `.quiddity/tools.json` | Concrete tool configuration by category |
+| `.quiddity/tools.json` | Concrete tool configuration by category  |
 
 These files should be committed to source control so your whole team shares the
 same configuration. The generated skills (in your agent's skills directory)
