@@ -29,6 +29,9 @@ This skill needs the following tools.json categories: **issues**
    - Any standard sections? (description, steps to reproduce, expected behavior)
    - Any issue templates already in use?
    - Auto-assign issues to the creator?
+   - For UI-related issues, should the skill generate ASCII wireframes to
+     illustrate the proposed change? (Great for making layout and component
+     ideas concrete before implementation.)
 
 5. **Generate the skill.** Write a complete `/new-issue` SKILL.md to the
    project's skills directory. The generated skill should:
