@@ -2,11 +2,22 @@
 
 Generate custom build-loop skills for any project.
 
-Quiddity provides a set of setup skills that walk you through configuring a
-complete [build loop](https://32pixels.co/blog/how-i-manage-my-dev-workflow-with-three-agent-skills)
-for your project. It asks about your systems, helps you install the right MCPs
-and tools, and writes custom `/next-task`, `/approve`, and `/new-issue` skills
-tailored to your workflow.
+My entire dev workflow runs on [three agent skills](https://32pixels.co/blog/how-i-manage-my-dev-workflow-with-three-agent-skills):
+`/new-issue` turns a plain-English description into a well-structured ticket,
+`/next-task` picks up the highest-priority item, implements it, and opens a PR,
+and `/approve` checks that everything's green, squash-merges, and ships it.
+
+The catch? Every team has its own issue tracker, branch conventions, CI setup,
+and review process. A `/next-task` skill that works great with Linear and GitHub
+is useless if your team runs Jira and GitLab. These skills have to be bespoke.
+
+Quiddity makes them bespoke for you. It interviews you about your systems,
+helps install the right MCPs, and generates `/next-task`, `/approve`, and
+`/new-issue` skills tailored to your project. The whole thing grew out of
+[building a /next-task skill from scratch](https://32pixels.co/blog/building-a-next-task-agent-skill),
+[extracting reusable sub-skills](https://32pixels.co/blog/extracting-sub-skills-from-agent-skills),
+and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-skill-and-stop-writing-issues-by-hand)
+— then realizing the setup itself could be automated.
 
 ## Install
 
