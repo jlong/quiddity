@@ -19,7 +19,10 @@ helps install the right MCPs, and generates `/next-task`, `/approve`, and
 [building a /next-task skill from scratch](https://32pixels.co/blog/building-a-next-task-agent-skill),
 [extracting reusable sub-skills](https://32pixels.co/blog/extracting-sub-skills-from-agent-skills),
 and [doing the same for /new-issue](https://32pixels.co/blog/build-a-new-issue-skill-and-stop-writing-issues-by-hand)
-— then realizing the setup itself could be automated.
+— then realizing the setup itself could be automated. Once your skills
+are dialed in, they're also a great precursor to a
+[Ralph loop](https://ghuntley.com/loop/) — an autonomous bash loop that
+runs your agent repeatedly until the work is done.
 
 ![Quiddity](quiddity-logo.png)
 
