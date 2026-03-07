@@ -26,6 +26,8 @@ This skill needs the following tools.json categories: **issues**,
      commit conventions
    - `.quiddity/tools.json` — extract the `issues`, `source-control`, and
      `ci` categories
+   - `.quiddity/architecture.md` — technical architecture and design direction
+     (if it exists)
 
 4. **Ask skill-specific questions** not covered by tools.json:
    - How should the next task be selected? (highest priority, oldest, specific
@@ -41,6 +43,9 @@ This skill needs the following tools.json categories: **issues**,
      configured tool and filters
    - Assign the issue and move it to the "In Progress" state
    - Create a branch following the configured naming convention
+   - If `.quiddity/architecture.md` exists, read it before implementing to
+     understand design direction, constraints, and patterns — it may describe
+     things not yet built that are relevant to the current task
    - Implement the changes described in the issue
    - Run local CI checks before pushing
    - Open a PR with the right format and link it to the issue

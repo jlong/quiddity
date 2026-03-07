@@ -56,11 +56,27 @@ that other skills can reference.
    - Is there anything important about the project structure not captured above?
    - Are there any conventions or patterns that aren't obvious from the files?
 
-4. **Write the results.** Create `.quiddity/project.md` with a clear summary.
+4. **Set up architecture reference.** Other skills (like `/next-task`) read
+   `.quiddity/architecture.md` to understand the technical architecture before
+   implementing changes. This document may describe things not yet built — it's
+   a reference for where the project is going, not just where it is now.
+
+   - **If an architecture doc already exists in the repo** (e.g., ARCHITECTURE.md,
+     docs/architecture.md), create a symlink: `.quiddity/architecture.md` →
+     the existing file. Tell the user about the symlink.
+   - **If the user has an architecture doc outside the repo** (a URL, a Google
+     Doc, a local file), ask them to share it. Copy the contents into
+     `.quiddity/architecture.md`.
+   - **If no architecture doc exists**, ask the user if they'd like to create
+     one. If yes, interview them about the high-level technical architecture
+     and write `.quiddity/architecture.md`. If no, skip this step — the file
+     is optional but recommended.
+
+5. **Write the results.** Create `.quiddity/project.md` with a clear summary.
    Create the `.quiddity/` directory if it doesn't exist. Write in second person
    ("Your project uses...") so other skills can reference it as context.
 
-5. **Confirm with the user.** Show them the generated project.md and ask if
+6. **Confirm with the user.** Show them the generated project.md and ask if
    anything needs to be adjusted.
 
 ## Output format
